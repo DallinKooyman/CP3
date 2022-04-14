@@ -26,7 +26,9 @@ export default {
     products() {
       return this.$root.$data.products.filter(
         (product) =>
-          product.name.toLowerCase().search(this.searchText.toLowerCase()) >= 0
+          product.first_name
+            .toLowerCase()
+            .search(this.searchText.toLowerCase()) >= 0
       );
     },
   },

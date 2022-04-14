@@ -1,7 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import mock from "./mock-data.js";
+import mock from "./data.js";
 
 let data = {
   products: mock,
@@ -10,7 +10,7 @@ let data = {
 };
 
 new Vue({
-  // eslint-disable-next-line no-undefdd
+  // eslint-disable-next-line no-undef
   router,
   data,
   render: (h) => h(App),
