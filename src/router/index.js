@@ -1,8 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/Home.vue";
-import Browse from "../views/Stats.vue";
-import Cart from "../views/Cart.vue";
+import Stats from "../views/Stats.vue";
+import Favorite from "../views/Favorite.vue";
 
 Vue.use(VueRouter);
 
@@ -15,12 +15,12 @@ const routes = [
   {
     path: "/stats",
     name: "stats",
-    component: Browse,
+    component: Stats,
   },
   {
-    path: "/cart",
-    name: "Cart",
-    component: Cart,
+    path: "/favorite",
+    name: "Favorite",
+    component: Favorite,
   },
 ];
 

@@ -14,7 +14,7 @@
             <p>Search by Stats</p>
           </div>
         </router-link>
-        <router-link to="/cart">
+        <router-link to="/favorite">
           <div class="menu-item">
             <img src="/images/love.png" />
             <p>{{ this.$root.$data.totalFavorites }} items</p>
@@ -23,6 +23,13 @@
       </div>
     </div>
     <router-view />
+    <div class="footer-container">
+      <footer>
+        <a href="https://github.com/DallinKooyman/CP3"
+          >Github Repo for this site</a
+        >
+      </footer>
+    </div>
   </div>
 </template>
 
@@ -99,5 +106,22 @@ body {
 
 .stats {
   margin-right: 50px;
+}
+
+footer {
+  background-color: #a9aca7;
+  height: auto;
+  width: 100%;
+  padding-left: 0.5%;
+  padding-bottom: 5px;
+  font-size: small;
+}
+
+.footer-container {
+  height: auto;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
 }
 </style>
