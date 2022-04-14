@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2>Search for a player</h2>
     <div class="wrapper">
       <div class="search">
         <form class="pure-form">
@@ -66,5 +67,9 @@ input {
   box-shadow: none !important;
   width: 100%;
   height: 40px;
+}
+
+h2 {
+  text-align: center;
 }
 </style>
