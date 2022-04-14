@@ -8,10 +8,10 @@
         <h1>Utah Smash Ultimate Player Roster</h1>
       </div>
       <div id="side">
-        <router-link to="/browse">
-          <div class="menu-item browse">
-            <img src="/images/globe.png" />
-            <p>Browse</p>
+        <router-link to="/stats">
+          <div class="menu-item stats">
+            <img src="../images/percent.png" />
+            <p>Search by Stats</p>
           </div>
         </router-link>
         <router-link to="/cart">
@@ -79,22 +79,25 @@ body {
   grid-area: side;
   display: flex;
   justify-content: flex-end;
+  align-items: flex-start;
 }
 
 #side img {
-  width: 50px;
+  width: 70px;
 }
 
 .menu-item {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu-item p {
   margin: 0px;
 }
 
-.browse {
+.stats {
   margin-right: 50px;
 }
 </style>

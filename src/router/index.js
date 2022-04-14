@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/Home.vue";
-import Browse from "../views/Browse.vue";
+import Browse from "../views/Stats.vue";
 import Cart from "../views/Cart.vue";
 
 Vue.use(VueRouter);
@@ -13,8 +13,8 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/browse",
-    name: "Browse",
+    path: "/stats",
+    name: "stats",
     component: Browse,
   },
   {
