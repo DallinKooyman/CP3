@@ -3,8 +3,9 @@
     <div id="menu">
       <div id="brand">
         <router-link to="/">
-          <img src="/images/ultimatelogo.png" />
+          <img src="../images/ultimatelogo.png" />
         </router-link>
+        <h1>Utah Smash Ultimate Player Roster</h1>
       </div>
       <div id="side">
         <router-link to="/browse">
@@ -44,6 +45,7 @@ export default {
 
 body {
   margin: 50px 100px;
+  background-color: #f9f8f9;
 }
 
 #menu {
@@ -62,6 +64,11 @@ body {
   grid-area: brand;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+}
+
+#brand h1 {
+  text-align: center;
 }
 
 #brand img {
