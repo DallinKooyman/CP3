@@ -90,6 +90,7 @@ export default {
 .player {
   margin: 10px;
   margin-top: 50px;
+  width: 450px;
 }
 
 .player img {
@@ -106,7 +107,7 @@ export default {
 }
 
 .info {
-  background: #f2921d;
+  background: #3992f7;
   color: #000;
   padding: 10px 30px;
 }
