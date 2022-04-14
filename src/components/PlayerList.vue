@@ -3,7 +3,19 @@
     <div class="players">
       <div class="player" v-for="player in players" :key="player.id">
         <div class="info">
-          <h1>{{ player.first_name }} {{ player.last_name }}</h1>
+          <div class="header">
+            <h1>{{ player.first_name }} {{ player.last_name }}</h1>
+            <button
+              v-if="favorited(player)"
+              v-on:click="unfavoritePlayer(player)"
+              class="auto"
+            >
+              <img src="/images/favorited.png" />
+            </button>
+            <button v-else v-on:click="favoritePlayer(player)" class="auto">
+              <img src="/images/not-favorited.png" />
+            </button>
+          </div>
           <p>ID: {{ player.id }}</p>
         </div>
         <div class="wins-loses">
@@ -48,19 +60,16 @@ export default {
     players: Array,
   },
   methods: {
-    addToCart(player) {
-      let inCart = false;
-      for (let item of this.$root.$data.cart) {
-        if (item.id == player.id) {
-          inCart = true;
-          item.quantity += 1;
-        }
-      }
-      if (!inCart) {
-        player.quantity = 1;
-        this.$root.$data.cart.push(player);
-      }
-      this.$root.$data.numItems += 1;
+    favoritePlayer(player) {
+      player.favorite = true;
+      this.$root.$data.favorites.push(player);
+      this.$root.$data.totalFavorites += 1;
+    },
+    unfavoritePlayer(player) {
+      player.favorite = false;
+      let index = this.$root.$data.favorites.indexOf(player);
+      this.$root.$data.favorites.splice(index, 1);
+      this.$root.$data.totalFavorites -= 1;
     },
     winloseRatio(player) {
       return (
@@ -68,6 +77,9 @@ export default {
           (parseInt(player.wins) + parseInt(player.loses))) *
         100
       ).toFixed(2);
+    },
+    favorited(player) {
+      return player.favorite;
     },
   },
 };
@@ -93,17 +105,13 @@ export default {
   width: 450px;
 }
 
-.player img {
-  border: 2px solid #333;
-  height: 250px;
-  width: 200px;
-  object-fit: cover;
+.header {
+  display: flex;
 }
 
-.player .image {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 5px;
+img {
+  width: 30px;
+  background: none;
 }
 
 .info {
@@ -144,9 +152,8 @@ export default {
 
 button {
   height: 50px;
-  background: #000;
-  color: white;
   border: none;
+  background: #3992f7;
 }
 
 .auto {

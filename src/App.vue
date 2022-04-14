@@ -3,21 +3,21 @@
     <div id="menu">
       <div id="brand">
         <router-link to="/">
-          <img src="../images/ultimatelogo.png" />
+          <img src="/images/ultimatelogo.png" />
         </router-link>
         <h1>Utah Smash Ultimate Player Roster</h1>
       </div>
       <div id="side">
         <router-link to="/stats">
           <div class="menu-item stats">
-            <img src="../images/percent.png" />
+            <img src="/images/percent.png" />
             <p>Search by Stats</p>
           </div>
         </router-link>
         <router-link to="/cart">
           <div class="menu-item">
             <img src="/images/love.png" />
-            <p>{{ this.$root.$data.numItems }} items</p>
+            <p>{{ this.$root.$data.totalFavorites }} items</p>
           </div>
         </router-link>
       </div>

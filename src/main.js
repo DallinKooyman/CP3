@@ -5,8 +5,8 @@ import mock from "./data.js";
 
 let data = {
   players: mock,
-  cart: [],
-  numItems: 0,
+  favorites: [],
+  totalFavorites: 0,
 };
 
 new Vue({
