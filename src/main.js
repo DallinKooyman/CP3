@@ -10,7 +10,7 @@ let data = {
 };
 
 new Vue({
-  // eslint-disable-next-line no-undefd
+  // eslint-disable-next-line no-undef
   router,
   data,
   render: (h) => h(App),
